@@ -1,11 +1,12 @@
 // initialize by constructing a named function...
-jQuery.noConflict();
+
 
 var chatWindow = new mhndbubbles(
   document.getElementById("chat"), // ...passing HTML container element...
   "chatWindow" // ...and name of the function as a parameter
 )
-
+jQuery.noConflict();
+jQuery(function ($) {
 // conversation object defined separately, but just the same as in the
 // "Basic chat-mhndbubble Example" (1-basics.html)
 var convo = {
@@ -949,7 +950,7 @@ chatWindow.talk(convo, "ConvT")
   
 	hideChat(0);
 
-jQuery(function ($) {	
+	
 
 $('#prime').click(function() {
   hideChat(1);
