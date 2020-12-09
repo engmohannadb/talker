@@ -1,5 +1,5 @@
 /* setup container styles */
-.bubble-container {
+.mhndbubble-container {
 	
 	height: 100%;
 	max-width: 750px;
@@ -11,7 +11,7 @@
 .chat_body p{
     font-family: system-ui, tahoma, sans-serif;
 }
-.bubble-wrap {
+.mhndbubble-wrap {
 	position: absolute;
 	top: 0;
 	bottom: 0;

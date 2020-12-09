@@ -1,5 +1,5 @@
 /* style user response reply */
-.bubble.reply {
+.mhndbubble.reply {
   background: transparent;
   box-shadow: none;
   float: right;
@@ -9,18 +9,18 @@
   padding: 0;
   max-width: 65%;
 }
-.bubble.reply.history {
-  margin: 0 0 2px 0; /* remembered bubbles do not need to stand out via margin */
+.mhndbubble.reply.history {
+  margin: 0 0 2px 0; /* remembered mhndbubbles do not need to stand out via margin */
 }
-.bubble.reply.say {
+.mhndbubble.reply.say {
   /*
   min-width: 350px;
  */
 }
-.bubble.reply .bubble-content {
+.mhndbubble.reply .mhndbubble-content {
   transition: all 200ms;
 }
-.bubble.reply .bubble-content .bubble-button {
+.mhndbubble.reply .mhndbubble-content .mhndbubble-button {
   background: white;
   color: #1F115A;
   padding: 8px 16px;
@@ -55,27 +55,27 @@
     opacity: 1;
   }
 }
-.bubble.reply.say .bubble-content .bubble-button {
+.mhndbubble.reply.say .mhndbubble-content .mhndbubble-button {
   animation-play-state: running;
   margin-top: 3px;
   min-height: 24px;
   overflow: hidden;
 }
 
-.bubble.reply .bubble-content .bubble-button:first-child {
+.mhndbubble.reply .mhndbubble-content .mhndbubble-button:first-child {
    border-radius: 15px 15px 15px 15px;
   margin-left: 2px;
 }
-.bubble.reply .bubble-content .bubble-button:last-child,
-.bubble.reply .bubble-content .bubble-button.bubble-pick {
+.mhndbubble.reply .mhndbubble-content .mhndbubble-button:last-child,
+.mhndbubble.reply .mhndbubble-content .mhndbubble-button.mhndbubble-pick {
   border-radius: 15px 15px 15px 15px;
 }
-.bubble.reply.bubble-picked .bubble-content .bubble-button {
+.mhndbubble.reply.mhndbubble-picked .mhndbubble-content .mhndbubble-button {
   transform: scale(0) translate3d(0px, 0px, 0px);
   padding: 0;
 }
-.bubble.reply:not(.bubble-picked) .bubble-content .bubble-button:hover,
-.bubble.reply .bubble-content .bubble-button.bubble-pick {
+.mhndbubble.reply:not(.mhndbubble-picked) .mhndbubble-content .mhndbubble-button:hover,
+.mhndbubble.reply .mhndbubble-content .mhndbubble-button.mhndbubble-pick {
   background: #1F115A;
   color:white;
   transform: scale(1) translate3d(0px, 0px, 0px);
@@ -84,31 +84,31 @@
 }
 
 /* interaction recall styles */
-.bubble.history .bubble-content .bubble-button,
-.bubble.history.reply:not(.bubble-picked) .bubble-content .bubble-button:hover,
-.bubble.history.reply .bubble-content .bubble-button.bubble-pick {
+.mhndbubble.history .mhndbubble-content .mhndbubble-button,
+.mhndbubble.history.reply:not(.mhndbubble-picked) .mhndbubble-content .mhndbubble-button:hover,
+.mhndbubble.history.reply .mhndbubble-content .mhndbubble-button.mhndbubble-pick {
   background: rgba(44, 44, 44, 0.67);
   cursor: default;
 }
 
-/* input fields for bubbles */
-.bubble .bubble-content input {
+/* input fields for mhndbubbles */
+.mhndbubble .mhndbubble-content input {
   background: linear-gradient(193deg, #1faced, #5592dc 100%) !important;
   box-shadow: 0 0px 1px 0px #000, 0 -1px 0 0px rgba(255, 255, 255, 0.38) inset;
   text-shadow: 0 1px rgba(0, 0, 0, 0.35);
   border: 0;
   outline: 0;
 }
-.bubble .bubble-content input::-webkit-input-placeholder {
+.mhndbubble .mhndbubble-content input::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: rgba(255, 255, 255, .5);
   text-shadow: none;
 }
-.bubble .bubble-content input::-moz-placeholder {
+.mhndbubble .mhndbubble-content input::-moz-placeholder {
   /* Firefox 19+ */
   color: rgba(255, 255, 255, .5);
   text-shadow: none;
 }
-.bubble .bubble-content input:read-only {
+.mhndbubble .mhndbubble-content input:read-only {
   background: linear-gradient(166deg, #48121d, #0d4058 100%) !important;
 }

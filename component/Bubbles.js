@@ -1,11 +1,11 @@
 // core function
-function Bubbles(container, self, options) {
+function mhndbubbles(container, self, options) {
   // options
   options = typeof options !== "undefined" ? options : {}
-  animationTime = options.animationTime || 200 // how long it takes to animate chat bubble, also set in CSS
+  animationTime = options.animationTime || 200 // how long it takes to animate chat mhndbubble, also set in CSS
   typeSpeed = options.typeSpeed || 5 // delay per character, to simulate the machine "typing"
-  widerBy = options.widerBy || 2 // add a little extra width to bubbles to make sure they don't break
-  sidePadding = options.sidePadding || 6 // padding on both sides of chat bubbles
+  widerBy = options.widerBy || 2 // add a little extra width to mhndbubbles to make sure they don't break
+  sidePadding = options.sidePadding || 6 // padding on both sides of chat mhndbubbles
   recallInteractions = options.recallInteractions || 0 // number of interactions to be remembered and brought back upon restart
   inputCallbackFn = options.inputCallbackFn || false // should we display an input field?
 
@@ -17,7 +17,7 @@ function Bubbles(container, self, options) {
 
   // local storage for recalling conversations upon restart
   var localStorageCheck = function() {
-    var test = "chat-bubble-storage-test"
+    var test = "chat-mhndbubble-storage-test"
     try {
       localStorage.setItem(test, test)
       localStorage.removeItem(test)
@@ -30,7 +30,7 @@ function Bubbles(container, self, options) {
     }
   }
   var localStorageAvailable = localStorageCheck() && recallInteractions > 0
-  var interactionsLS = "chat-bubble-interactions"
+  var interactionsLS = "chat-mhndbubble-interactions"
   var interactionsHistory =
     (localStorageAvailable &&
       JSON.parse(localStorage.getItem(interactionsLS))) ||
@@ -45,8 +45,8 @@ function Bubbles(container, self, options) {
 
     // do not memorize buttons; only user input gets memorized:
     if (
-      // `bubble-button` class name signals that it's a button
-      say.includes("bubble-button") &&
+      // `mhndbubble-button` class name signals that it's a button
+      say.includes("mhndbubble-button") &&
       // if it is not of a type of textual reply
       reply !== "reply reply-freeform" &&
       // if it is not of a type of textual reply or memorized user choice
@@ -66,10 +66,10 @@ function Bubbles(container, self, options) {
   }
 
   // set up the stage
-  container.classList.add("bubble-container")
-  var bubbleWrap = document.createElement("div")
-  bubbleWrap.className = "bubble-wrap"
-  container.appendChild(bubbleWrap)
+  container.classList.add("mhndbubble-container")
+  var mhndbubbleWrap = document.createElement("div")
+  mhndbubbleWrap.className = "mhndbubble-wrap"
+  container.appendChild(mhndbubbleWrap)
 
   // install user input textfield
   this.typeInput = function(callbackFn) {
@@ -82,15 +82,15 @@ function Bubbles(container, self, options) {
       // register user input
       if (e.keyCode == 13) {
         e.preventDefault()
-        typeof bubbleQueue !== false ? clearTimeout(bubbleQueue) : false // allow user to interrupt the bot
-        var lastBubble = document.querySelectorAll(".bubble.say")
-        lastBubble = lastBubble[lastBubble.length - 1]
-        lastBubble.classList.contains("reply") &&
-        !lastBubble.classList.contains("reply-freeform")
-          ? lastBubble.classList.add("bubble-hidden")
+        typeof mhndbubbleQueue !== false ? clearTimeout(mhndbubbleQueue) : false // allow user to interrupt the bot
+        var lastmhndbubble = document.querySelectorAll(".mhndbubble.say")
+        lastmhndbubble = lastmhndbubble[lastmhndbubble.length - 1]
+        lastmhndbubble.classList.contains("reply") &&
+        !lastmhndbubble.classList.contains("reply-freeform")
+          ? lastmhndbubble.classList.add("mhndbubble-hidden")
           : false
-        addBubble(
-          '<span class="bubble-button bubble-pick">' + this.value + "</span>",
+        addmhndbubble(
+          '<span class="mhndbubble-button mhndbubble-pick">' + this.value + "</span>",
           function() {},
           "reply reply-freeform"
         )
@@ -106,22 +106,22 @@ function Bubbles(container, self, options) {
       }
     })
     container.appendChild(inputWrap)
-    bubbleWrap.style.paddingBottom = "100px"
+    mhndbubbleWrap.style.paddingBottom = "100px"
     inputText.focus()
   }
   inputCallbackFn ? this.typeInput(inputCallbackFn) : false
 
-  // init typing bubble
-  var bubbleTyping = document.createElement("div")
-  bubbleTyping.className = "bubble-typing imagine"
+  // init typing mhndbubble
+  var mhndbubbleTyping = document.createElement("div")
+  mhndbubbleTyping.className = "mhndbubble-typing imagine"
   for (dots = 0; dots < 3; dots++) {
     var dot = document.createElement("div")
     dot.className = "dot_" + dots + " dot"
-    bubbleTyping.appendChild(dot)
+    mhndbubbleTyping.appendChild(dot)
   }
-  bubbleWrap.appendChild(bubbleTyping)
+  mhndbubbleWrap.appendChild(mhndbubbleTyping)
 
-  // accept JSON & create bubbles
+  // accept JSON & create mhndbubbles
   this.talk = function(convo, here) {
     // all further .talk() calls will append the conversation with additional blocks defined in convo parameter
     _convo = Object.assign(_convo, convo) // POLYFILL REQUIRED FOR OLDER BROWSERS
@@ -141,7 +141,7 @@ function Bubbles(container, self, options) {
       for (var i = 0; i < turn.reply.length; i++) {
         ;(function(el, count) {
           questionsHTML +=
-            '<span class="bubble-button" style="animation-delay: ' +
+            '<span class="mhndbubble-button" style="animation-delay: ' +
             animationTime / 2 * count +
             'ms" onClick="' +
             self +
@@ -149,17 +149,17 @@ function Bubbles(container, self, options) {
             el.answer +
             "', '" +
             el.question +
-            "');this.classList.add('bubble-pick')\">" +
+            "');this.classList.add('mhndbubble-pick')\">" +
             el.question +
             "</span>"
         })(turn.reply[i], i)
       }
     }
-    orderBubbles(turn.says, function() {
-      bubbleTyping.classList.remove("imagine")
+    ordermhndbubbles(turn.says, function() {
+      mhndbubbleTyping.classList.remove("imagine")
       questionsHTML !== ""
-        ? addBubble(questionsHTML, function() {}, "reply")
-        : bubbleTyping.classList.add("imagine")
+        ? addmhndbubble(questionsHTML, function() {}, "reply")
+        : mhndbubbleTyping.classList.add("imagine")
     })
   }
   // navigate "answers"
@@ -174,22 +174,22 @@ function Bubbles(container, self, options) {
     // add re-generated user picks to the history stack
     if (_convo[key] !== undefined && content !== undefined) {
       interactionsSave(
-        '<span class="bubble-button reply-pick">' + content + "</span>",
+        '<span class="mhndbubble-button reply-pick">' + content + "</span>",
         "reply reply-pick"
       )
     }
   }
 
-  // api for typing bubble
+  // api for typing mhndbubble
   this.think = function() {
-    bubbleTyping.classList.remove("imagine")
+    mhndbubbleTyping.classList.remove("imagine")
     this.stop = function() {
-      bubbleTyping.classList.add("imagine")
+      mhndbubbleTyping.classList.add("imagine")
     }
   }
 
   // "type" each message within the group
-  var orderBubbles = function(q, callback) {
+  var ordermhndbubbles = function(q, callback) {
     var start = function() {
       setTimeout(function() {
         callback()
@@ -203,47 +203,47 @@ function Bubbles(container, self, options) {
     ) {
       ;(function(callback, index) {
         start = function() {
-          addBubble(q[index], callback)
+          addmhndbubble(q[index], callback)
         }
       })(start, nextCallback)
     }
     start()
   }
 
-  // create a bubble
-  var bubbleQueue = false
-  var addBubble = function(say, posted, reply, live) {
+  // create a mhndbubble
+  var mhndbubbleQueue = false
+  var addmhndbubble = function(say, posted, reply, live) {
     reply = typeof reply !== "undefined" ? reply : ""
-    live = typeof live !== "undefined" ? live : true // bubbles that are not "live" are not animated and displayed differently
+    live = typeof live !== "undefined" ? live : true // mhndbubbles that are not "live" are not animated and displayed differently
     var animationTime = live ? this.animationTime : 0
     var typeSpeed = live ? this.typeSpeed : 0
-    // create bubble element
-    var bubble = document.createElement("div")
-    var bubbleContent = document.createElement("span")
-    bubble.className = "bubble imagine " + (!live ? " history " : "") + reply
-    bubbleContent.className = "bubble-content"
-    bubbleContent.innerHTML = say
-    bubble.appendChild(bubbleContent)
-    bubbleWrap.insertBefore(bubble, bubbleTyping)
+    // create mhndbubble element
+    var mhndbubble = document.createElement("div")
+    var mhndbubbleContent = document.createElement("span")
+    mhndbubble.className = "mhndbubble imagine " + (!live ? " history " : "") + reply
+    mhndbubbleContent.className = "mhndbubble-content"
+    mhndbubbleContent.innerHTML = say
+    mhndbubble.appendChild(mhndbubbleContent)
+    mhndbubbleWrap.insertBefore(mhndbubble, mhndbubbleTyping)
     // answer picker styles
     if (reply !== "") {
-      var bubbleButtons = bubbleContent.querySelectorAll(".bubble-button")
-      for (var z = 0; z < bubbleButtons.length; z++) {
+      var mhndbubbleButtons = mhndbubbleContent.querySelectorAll(".mhndbubble-button")
+      for (var z = 0; z < mhndbubbleButtons.length; z++) {
         ;(function(el) {
           if (!el.parentNode.parentNode.classList.contains("reply-freeform"))
             el.style.width = el.offsetWidth - sidePadding * 2 + widerBy + "px"
-        })(bubbleButtons[z])
+        })(mhndbubbleButtons[z])
       }
-      bubble.addEventListener("click", function(e) {
-        if (e.target.classList.contains('bubble-button')) {
-          for (var i = 0; i < bubbleButtons.length; i++) {
+      mhndbubble.addEventListener("click", function(e) {
+        if (e.target.classList.contains('mhndbubble-button')) {
+          for (var i = 0; i < mhndbubbleButtons.length; i++) {
             ;(function(el) {
               el.style.width = 0 + "px"
-              el.classList.contains("bubble-pick") ? (el.style.width = "") : false
+              el.classList.contains("mhndbubble-pick") ? (el.style.width = "") : false
               el.removeAttribute("onclick")
-            })(bubbleButtons[i])
+            })(mhndbubbleButtons[i])
           }
-          this.classList.add("bubble-picked")
+          this.classList.add("mhndbubble-picked")
         }
       })
     }
@@ -254,20 +254,20 @@ function Bubbles(container, self, options) {
       wait += typeSpeed * say.length
       wait < minTypingWait ? (wait = minTypingWait) : false
       setTimeout(function() {
-        bubbleTyping.classList.remove("imagine")
+        mhndbubbleTyping.classList.remove("imagine")
       }, animationTime)
     }
     live && setTimeout(function() {
-      bubbleTyping.classList.add("imagine")
+      mhndbubbleTyping.classList.add("imagine")
     }, wait - animationTime * 2)
-    bubbleQueue = setTimeout(function() {
-      bubble.classList.remove("imagine")
-      var bubbleWidthCalc = bubbleContent.offsetWidth + widerBy + "px"
-      bubble.style.width = reply == "" ? bubbleWidthCalc : ""
-      bubble.style.width = say.includes("<img src=")
+    mhndbubbleQueue = setTimeout(function() {
+      mhndbubble.classList.remove("imagine")
+      var mhndbubbleWidthCalc = mhndbubbleContent.offsetWidth + widerBy + "px"
+      mhndbubble.style.width = reply == "" ? mhndbubbleWidthCalc : ""
+      mhndbubble.style.width = say.includes("<img src=")
         ? "50%"
-        : bubble.style.width
-      bubble.classList.add("say")
+        : mhndbubble.style.width
+      mhndbubble.classList.add("say")
       posted()
 
       // save the interaction
@@ -276,26 +276,26 @@ function Bubbles(container, self, options) {
 
       // animate scrolling
       containerHeight = container.offsetHeight
-      scrollDifference = bubbleWrap.scrollHeight - bubbleWrap.scrollTop
+      scrollDifference = mhndbubbleWrap.scrollHeight - mhndbubbleWrap.scrollTop
       scrollHop = scrollDifference / 200
-      var scrollBubbles = function() {
+      var scrollmhndbubbles = function() {
         for (var i = 1; i <= scrollDifference / scrollHop; i++) {
           ;(function() {
             setTimeout(function() {
-              bubbleWrap.scrollHeight - bubbleWrap.scrollTop > containerHeight
-                ? (bubbleWrap.scrollTop = bubbleWrap.scrollTop + scrollHop)
+              mhndbubbleWrap.scrollHeight - mhndbubbleWrap.scrollTop > containerHeight
+                ? (mhndbubbleWrap.scrollTop = mhndbubbleWrap.scrollTop + scrollHop)
                 : false
             }, i * 5)
           })()
         }
       }
-      setTimeout(scrollBubbles, animationTime / 2)
+      setTimeout(scrollmhndbubbles, animationTime / 2)
     }, wait + animationTime * 2)
   }
 
   // recall previous interactions
   for (var i = 0; i < interactionsHistory.length; i++) {
-    addBubble(
+    addmhndbubble(
       interactionsHistory[i].say,
       function() {},
       interactionsHistory[i].reply,
@@ -306,12 +306,12 @@ function Bubbles(container, self, options) {
 
 // below functions are specifically for WebPack-type project that work with import()
 
-// this function automatically adds all HTML and CSS necessary for chat-bubble to function
+// this function automatically adds all HTML and CSS necessary for chat-mhndbubble to function
 function prepHTML(options) {
   // options
   var options = typeof options !== "undefined" ? options : {}
   var container = options.container || "chat" // id of the container HTML element
-  var relative_path = options.relative_path || "./node_modules/chat-bubble/"
+  var relative_path = options.relative_path || "./node_modules/chat-mhndbubble/"
 
   // make HTML container element
   window[container] = document.createElement("div")
@@ -336,6 +336,6 @@ function prepHTML(options) {
 
 // exports for es6
 if (typeof exports !== "undefined") {
-  exports.Bubbles = Bubbles
+  exports.mhndbubbles = mhndbubbles
   exports.prepHTML = prepHTML
 }

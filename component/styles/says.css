@@ -1,7 +1,7 @@
 
-/* style bubbles */
-.bubble,
-.bubble-typing {
+/* style mhndbubbles */
+.mhndbubble,
+.mhndbubble-typing {
 color: #000000;
     background: rgb(232 232 232);
   padding: 8px 16px;
@@ -23,25 +23,25 @@ color: #000000;
   box-sizing: content-box;
   width: auto !important;
 }
-.bubble .bubble-content {
+.mhndbubble .mhndbubble-content {
   transition: opacity 150ms;
 }
-.bubble:not(.say) .bubble-content {
+.mhndbubble:not(.say) .mhndbubble-content {
   opacity: 0;
 }
-.bubble-typing.imagine,
-.bubble.imagine {
+.mhndbubble-typing.imagine,
+.mhndbubble.imagine {
   transform: scale(0);
   transition: all 200ms, height 200ms 1s, padding 200ms 1s;
 }
-.bubble.imagine {
+.mhndbubble.imagine {
   margin: 0;
   height: 0;
   padding: 0;
 }
 
-/* style media that's inside bubbles */
-.bubble .bubble-content img {
+/* style media that's inside mhndbubbles */
+.mhndbubble .mhndbubble-content img {
   width: calc(100% + 32px);
   margin: -8px -16px;
   overflow: hidden;
@@ -50,12 +50,12 @@ color: #000000;
 }
 
 /* interaction recall styles */
-.bubble.history,
-.bubble.history .bubble-content,
-.bubble.history .bubble-content .bubble-button,
-.bubble.history .bubble-content .bubble-button:hover {
+.mhndbubble.history,
+.mhndbubble.history .mhndbubble-content,
+.mhndbubble.history .mhndbubble-content .mhndbubble-button,
+.mhndbubble.history .mhndbubble-content .mhndbubble-button:hover {
   transition: all 0ms !important;
 }
-.bubble.history {
+.mhndbubble.history {
   opacity: .25;
 }

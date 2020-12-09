@@ -1,13 +1,13 @@
 // initialize by constructing a named function...
 jQuery.noConflict();
 jQuery(function ($) {
-var chatWindow = new Bubbles(
+var chatWindow = new mhndbubbles(
   document.getElementById("chat"), // ...passing HTML container element...
   "chatWindow" // ...and name of the function as a parameter
 )
 
 // conversation object defined separately, but just the same as in the
-// "Basic chat-bubble Example" (1-basics.html)
+// "Basic chat-mhndbubble Example" (1-basics.html)
 var convo = {
   // "ice" (as in "breaking the ice") is a required conversation object
   // that maps the first thing the bot will say to the user
@@ -362,7 +362,7 @@ var convo = {
     
     
   mainConv: {
-    // "says" defines an array of sequential bubbles
+    // "says" defines an array of sequential mhndbubbles
     // that the bot will produce
     says: ["مرحبا بك","يسعدني خدمتك","هل مشكلتك تتعلق بأي من"],
 
