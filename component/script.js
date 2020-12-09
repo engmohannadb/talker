@@ -1,4 +1,6 @@
 // initialize by constructing a named function...
+jQuery.noConflict();
+jQuery(function ($) {
 var chatWindow = new Bubbles(
   document.getElementById("chat"), // ...passing HTML container element...
   "chatWindow" // ...and name of the function as a parameter
@@ -1041,3 +1043,4 @@ function hideChat(hide) {
     }
 }
 
+});
