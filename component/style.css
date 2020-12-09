@@ -108,6 +108,7 @@ display: inline-block;
   -webkit-transition: all .2s ease-out;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
+  position: revert;
 }
 
 .chat_fullscreen {
@@ -679,6 +680,7 @@ strong.chat_time {
 @media only screen and (min-width: 768px) {
   .chat {
     width: 300px;
+	
   }
   .chat_field {
     width: 65%;
