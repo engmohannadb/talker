@@ -368,17 +368,17 @@ background: white;
 }
 
 .chat_converse {
-  position: relative;
+     /* position: relative; */
     background: #fff;
-    margin: 6px 0 0px 0;
+    /* margin: 6px 0 0px 0; */
     height: 400px;
     min-height: 0;
     font-size: 12px;
     line-height: 18px;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     width: 100%;
-    float: right;
-	    border-radius: 20px;
+    /* float: right; */
+    border-radius: 0px 0px 20px 20px;
 }
 .chat_converse2{
       height: 100%;
