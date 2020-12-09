@@ -1,9 +1,4 @@
-var jq = $.noConflict();
-jq(document).ready(function(){
-  jq("button").click(function(){
-    jq("p").text("jQuery is still working!");
-  });
-});
+
 // initialize by constructing a named function...
 var chatWindow = new Bubbles(
   document.getElementById("chat"), // ...passing HTML container element...
