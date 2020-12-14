@@ -246,7 +246,7 @@ var convo = {
   },
     
     
-                        ConvT2211 : {
+                        ConvT222 : {
         says: ["نأمل طلب دعم فني (تحديث بيانات البلاك بورد) عبر بوابة الدعم للمؤسسة عبر الرابط:" , "<a href='https://itsmsso.tvtc.gov.sa/rsso/start' target='_blank'>itsmsso.tvtc.gov.sa/</a>"],
     reply: [
     ]
