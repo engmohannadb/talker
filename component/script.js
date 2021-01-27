@@ -50,7 +50,7 @@ var convo = {
     
     
               ConvT1 : {
-    says: ["نأمل رفع طلب دعم فني عبر بوابة الدعم للمؤسسة" , "<a href='https://itsmsso.tvtc.gov.sa/rsso/start' target='_blank'>itsmsso.tvtc.gov.sa/</a>" , "هل أستطيع خدمتك خدمة أخرى؟"],
+    says: ["نأمل رفع طلب دعم فني عبر بوابة الدعم للمؤسسة" , "<a href='https://tvtc.gov.sa/tech-support-page.html' target='_blank'>itsmsso.tvtc.gov.sa/</a>" , "هل أستطيع خدمتك خدمة أخرى؟"],
     reply: [
       {
         question: "لا ، شكرا لك",
@@ -247,7 +247,7 @@ var convo = {
     
     
                         ConvT222 : {
-        says: ["نأمل طلب دعم فني (تحديث بيانات البلاك بورد) عبر بوابة الدعم للمؤسسة عبر الرابط:" , "<a href='https://itsmsso.tvtc.gov.sa/rsso/start' target='_blank'>itsmsso.tvtc.gov.sa/</a>"],
+        says: ["نأمل طلب دعم فني (تحديث بيانات البلاك بورد) عبر بوابة الدعم للمؤسسة عبر الرابط:" , "<a href='https://tvtc.gov.sa/tech-support-page.html' target='_blank'>itsmsso.tvtc.gov.sa/</a>"],
     reply: [
     ]
   },
@@ -788,7 +788,7 @@ var convo = {
     
     
                                     ConvB3 : {
-                                says: ["نأمل إرسال طلب دعم فني (تحديث بيانات البلاك بورد) عبر بوابة الدعم الفني للمؤسسة.", "<a href='https://itsmsso.tvtc.gov.sa/rsso/start' target='_blank'>itsmsso.tvtc.gov.sa/</a>" , "هل أستطيع خدمتك خدمة أخرى؟"],
+                                says: ["نأمل إرسال طلب دعم فني (تحديث بيانات البلاك بورد) عبر بوابة الدعم الفني للمؤسسة.", "<a href='https://tvtc.gov.sa/tech-support-page.html' target='_blank'>itsmsso.tvtc.gov.sa/</a>" , "هل أستطيع خدمتك خدمة أخرى؟"],
                                 reply: [
                                     {
                                         question: "نعم",
