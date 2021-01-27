@@ -16,7 +16,7 @@ var convo = {
      
     
           ConvT : {
-    says: ["مرحبا بك", "انا نايف من مركز التدرب الإلكتروني أتشرف بخدمتك" , "هل انت مدرب أم متدرب؟ <iframe src='https://engmohannadb.github.io/talker/analytics.html' target='_blank' width='0px' height='0px' />"],
+    says: ["مرحبا بك", "انا فيصل من مركز التدرب الإلكتروني أتشرف بخدمتك" , "هل انت مدرب أم متدرب؟ <iframe src='https://engmohannadb.github.io/talker/analytics.html' target='_blank' width='0px' height='0px' />"],
     reply: [
       {
         question: "متدرب",
