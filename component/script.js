@@ -936,7 +936,7 @@ var convo = {
     
   
    BYE: {
-    says: ["تشرفنا بخدمتك", "مع السلامة"],
+    says: ["تشرفنا بخدمتك", "مع السلامة", "ساعدنا بتطوير الخدمة عبر  تقييمها من الرابط أدناه","<a href='https://forms.gle/3s1K4ZabC1gMPkhY7'>https://forms.gle/3s1K4ZabC1gMPkhY7</a>"],
     reply: []
 
   }
