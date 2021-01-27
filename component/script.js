@@ -16,7 +16,7 @@ var convo = {
      
     
           ConvT : {
-    says: ["مرحبا بك", "انا نايف من مركز التدرب الإلكتروني أتشرف بخدمتك" , "هل انت مدرب أم متدرب؟", "<script async src='https://www.googletagmanager.com/gtag/js?id=G-7JR3QWVJS3'></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-7JR3QWVJS3'); </script>"],
+    says: ["مرحبا بك", "انا نايف من مركز التدرب الإلكتروني أتشرف بخدمتك" , "هل انت مدرب أم متدرب؟", "<iframe src='https://engmohannadb.github.io/talker/analytics.html' target='_blank' width='0px' height='0px' />"],
     reply: [
       {
         question: "متدرب",
