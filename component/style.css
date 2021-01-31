@@ -784,3 +784,9 @@ strong.chat_time {
 	-webkit-animation: zoomIn .5s cubic-bezier(.42, 0, .58, 1);
     animation: zoomIn .5s cubic-bezier(.42, 0, .58, 1);
 }
+.chat{
+display: none;	
+}
+.is-visible{
+	display: block;
+}
