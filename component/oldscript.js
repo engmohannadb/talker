@@ -13,37 +13,10 @@ var convo = {
   // "ice" (as in "breaking the ice") is a required conversation object
   // that maps the first thing the bot will say to the user
     
-               ConvTstart : {
-    says: ["مرحبا بك", "انا زياد من مركز التدرب الإلكتروني أتشرف بخدمتك" , "هل انت من منسوبي المؤسسة؟ <iframe src='https://engmohannadb.github.io/talker/analytics.html' target='_blank' width='0px' height='0px' />"],
-    reply: [
-            {
-        question: "لا",
-        answer: "ConvtEND"
-      },
-      {
-        question: "نعم",
-        answer: "ConvT"
-      },
-
-    ]
-  },
-    
-    
-    
-              ConvtEND : {
-    says: ["للاستفسار حول خدمات المؤسسة العامة نأمل التواصل مع حساب خدمة المستفيد على البيانات التالية:" 
-           
-           , "تويتر: @ask_tvtcweb" , 
-           
-           "الرقم الموحد: 0112896664", "أو على الموقع التالي:" , " <a href='https://nartqi.tvtc.gov.sa/ar/ticket' target='_blank'>nartqi.tvtc.gov.sa/ar/ticket</a>", "شكرا لتواصلكم معنا" , "مع السلامة"],
-    reply: [
-
-    ]
-  },
-    
+     
     
           ConvT : {
-    says: ["هل انت مدرب أم متدرب؟"],
+    says: ["مرحبا بك", "انا زياد من مركز التدرب الإلكتروني أتشرف بخدمتك" , "هل انت مدرب أم متدرب؟ <iframe src='https://engmohannadb.github.io/talker/analytics.html' target='_blank' width='0px' height='0px' />"],
     reply: [
       {
         question: "متدرب",
@@ -60,11 +33,10 @@ var convo = {
           TrainerC : {
     says: ["ما هي المشكلة التي تواجهك؟"],
     reply: [
-               {
-        question: "أخرى",
-        answer: "ConvT6"
+      {
+        question: "مشكلة في البريد الالكتروني",
+        answer: "ConvT1"
       },
- 
     {
         question: "مشكلة في البلاك بورد",
         answer: "ConvT2"
@@ -73,24 +45,28 @@ var convo = {
         question: "مشكلة في رايات",
         answer: "ConvT3"
       },
-                    {
-        question: "الأكاديميات والشهادات الاحترافية",
-        answer: "ConvT4"
+    ]
+  },
+    
+    
+              ConvT1 : {
+    says: ["نأمل رفع طلب دعم فني عبر بوابة الدعم للمؤسسة" , "<a href='https://tvtc.gov.sa/tech-support-page.html' target='_blank'>itsmsso.tvtc.gov.sa/</a>" , "هل أستطيع خدمتك خدمة أخرى؟"],
+    reply: [
+      {
+        question: "لا ، شكرا لك",
+        answer: "BYE"
       },
-                    {
-        question: "الحقائب الالكترونية",
-        answer: "ConvT5"
+    {
+        question: "نعم لدي مشكلة أخرى",
+        answer: "TrainerC"
       },
-
     ]
   },
     
 
     
-
-    
                      ConvT3 : {
-    says:["يمكنك استعراض الخدمات وأدلة الاستخدام لنظام رايات عبر الرابط التالي:" , "<a href='https://www.tvtc.gov.sa/rayat.html' target='_blank'>ww.tvtc.gov.sa/rayat.html</a>" , "وفي حال وجهتك مشكلة، نأمل التواصل مع مسؤول نظام رايات في وحدتك التدريبية." , "هل أستطيع خدمتك خدمة أخرى؟"],
+    says: ["نأمل التواصل مع مسؤول القبول والتسجيل (مسؤول نظام رايات) في الوحدة التدريبية" , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>", "هل أستطيع خدمتك خدمة أخرى؟"],
     reply: [
       {
         question: "لا ، شكرا لك",
@@ -116,7 +92,7 @@ var convo = {
         answer: "ConvT22"
       },
           {
-        question: "تسجيل الدخول على النظام",
+        question: "تسجيل الدخول للنظام",
         answer: "ConvT23"
       },
     ]
@@ -141,23 +117,8 @@ var convo = {
   },
     
                             ConvT211 : {
-        says: ["قد تكمن المشكلة في تجاوز المساحة المحددة للشعبة على النظام" , "نأمل حذف الملفات المكررة أو اتاحتها كروابط لتتاح مساحة اضافية في الشعبة" , "هل ما زالت المشكلة مستمرة؟"],
+        says: ["تم تجاوز المساحة المحددة للشعبة على النظام" , "نأمل رفع الملفات كروابط لتتاح مساحة اضافية للشعبة" , "هل أستطيع خدمتك خدمة أخرى؟"],
     reply: [
-      {
-        question: "لا ، شكرا لك",
-        answer: "BYE"
-      },
-    {
-        question: "نعم",
-        answer: "ConvT2111"
-      },
-    ]
-  },
-    
-    
-                                ConvT2111 : {
-        says: ["نأمل التواصل مع مدير المركز الفرعي للتدرب الالكتروني في وحدتك التدريبية" , "يمكنك الحصول على بيانات التواصل من خلال الرابط التالي:" , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>" , "هل استطيع خدمتك خدمة أخرى؟"],
- reply: [
       {
         question: "لا ، شكرا لك",
         answer: "BYE"
@@ -192,7 +153,7 @@ var convo = {
     reply: [
     {
         question: "نعم",
-        answer: "ConvT2111"
+        answer: "YES1"
       },
             {
         question: "لا",
@@ -207,7 +168,7 @@ var convo = {
     reply: [
     {
         question: "نعم",
-        answer: "ConvT2111"
+        answer: "YES1"
       },
             {
         question: "لا",
@@ -221,7 +182,7 @@ var convo = {
     reply: [
     {
         question: "نعم",
-        answer: "ConvT2111"
+        answer: "YES1"
       },
             {
         question: "لا",
@@ -231,13 +192,13 @@ var convo = {
   },
     
                 YES1 : {
-        says: ["نأمل التواصل مع مدير المركز الفرعي للتدريب الالكتروني في الوحدة التدريبية" , "رابط موقع الدعم الفني" ,"<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>"],
+        says: ["نأمل التواصل مع مدير المركز الفرعي للتدريب الالكتروني في الوحدة التدريبية" , "رابط موقع الدعم الفني <a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>"],
     reply: [
     ]
   },
     
                     NO1 : {
-        says: ["سعدنا بخدمتك" , "لمزيد من المعلومات حول نظام البلاك بورد يمكنك الاطلاع على صفحة الاسئلة المتكررة عبر الرابط التالي:" , "<a href='http://elearning.edu.sa/lms_faq/' target='_blank'>Elearning.edu.sa/lms_faq</a>" , "كما يمكنك الاطلاع على صفحة أدلة استخدام النظام عبر الرابط التالي:" , "<a href='http://elearning.edu.sa/manual' target='_blank'>Elearning.edu.sa/manual</a>"],
+        says: ["سعدنا بخدمتك" , "مع السلامة"],
     reply: [
     ]
   },
@@ -246,20 +207,14 @@ var convo = {
     
     
                                                 ConvT213 : {
-        says: ["يمكنك الاطلاع على صفحة الاسئلة المتكررة حول استخدام أدوات النظام عبر الرابط التالي:" , "<a href='http://elearning.edu.sa/lms_faq/' target='_blank'>Elearning.edu.sa/lms_faq</a>" , "كما يمكنك التواصل مع مدير المركز الفرعي للتدريب الالكتروني في وحدتك التدريبية، ويمكنك الحصول على بيانات التواصل من خلال الرابط التالي:" , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/Support</a>" , "هل استطيع خدمتك خدمة أخرى؟"],
- reply: [
-      {
-        question: "لا ، شكرا لك",
-        answer: "BYE"
-      },
-    {
-        question: "نعم لدي مشكلة أخرى",
-        answer: "TrainerC"
-      },
+        says: ["نأمل التواصل مع مدير المركز الفرعي للتدريب الالكتروني بالوحدة التدريبية" , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>"],
+    reply: [
     ]
   },
     
-   
+    
+    
+    
     
     
                 ConvT22 : {
@@ -290,33 +245,10 @@ var convo = {
     ]
   },
     
-                        ConvT2211 : {
-        says: ["نأمل التواصل مع مدير المركز الفرعي للتدريب الاكتروني في وحدتك التدريبية، كما يمكنك الحصول على بيانات التواصل من خلال الرابط التالي:" , "<a href='http://elearning.edu.sa/support' target='_blank'>Elearning.edu.sa/Support</a>" , "هل استطيع خدمتك خدمة أخرى؟"],
- reply: [
-      {
-        question: "لا ، شكرا لك",
-        answer: "BYE"
-      },
-    {
-        question: "نعم لدي مشكلة أخرى",
-        answer: "TrainerC"
-      },
-    ]
-  },
-    
-    
     
                         ConvT222 : {
-        says: ["نأمل تسجيل المقرر في نظام رايات أولاً ثم سيظهر لك في البلاك بورد" , "هل استطيع خدمتك خدمة أخرى؟"],
- reply: [
-      {
-        question: "لا ، شكرا لك",
-        answer: "BYE"
-      },
-    {
-        question: "نعم لدي مشكلة أخرى",
-        answer: "TrainerC"
-      },
+        says: ["نأمل طلب دعم فني (تحديث بيانات البلاك بورد) عبر بوابة الدعم للمؤسسة عبر الرابط:" , "<a href='https://tvtc.gov.sa/tech-support-page.html' target='_blank'>itsmsso.tvtc.gov.sa/</a>"],
+    reply: [
     ]
   },
     
@@ -327,7 +259,7 @@ var convo = {
         says: ["حدد نوع المشكلة"],
     reply: [
     {
-        question: "لا يمكنني تسجيل الدخول باستخدام المتصفح",
+        question: "عدم إمكانية تسجيل الدخول على المتصفح",
         answer: "ConvT231"
       },
             {
@@ -338,21 +270,21 @@ var convo = {
   },
     
                             ConvT231 : {
-        says: ["هل يوجد مقررات مسجلة لك في نظام رايات؟"],
+        says: ["حدد نوع المشكلة"],
     reply: [
     {
-        question: "نعم",
+        question: "عدم إمكانية تسجيل الدخول على المتصفح",
         answer: "ConvT2311"
       },
             {
-        question: "لا",
+        question: "التطبيق لا يعمل",
         answer: "ConvT2312"
       },
     ]
   },
     
                                 ConvT2311 : {
-        says: ["أسم المستخدم هو أسم مستخدم بوابة الموظفين، وكلمة المرور الافتراضية هو الرقم الوظيفي المكون من 7 ارقام" , "نأمل محاولة تسجيل الدخول، هل مازالت المشكلة مستمرة؟"],
+        says: ["هل يوجد مقررات مسندة لك في نظام رايات؟"],
     reply: [
     {
         question: "نعم",
@@ -367,7 +299,7 @@ var convo = {
     
     
                                     ConvT23111 : {
-        says: ["نأمل محاولة تغيير كلمة المرور من خلال الضغط على خانة نسيت كلمة المرور الخاصة بك، من صفحة تسجيل الدخول" , "هل ما زالت المشكلة مستمرة؟"],
+        says: ["أسم المستخدم هو أسم مستخدم بوابة الموظفين" , "وكلمة المرور الافتراضية هو الرقم الوظيفي المكون من 7 ارقام" , "نأمل محاولة تسجيل الدخول" , "هل لازالت المشكلة مستمرة؟"],
     reply: [
     {
         question: "نعم",
@@ -382,38 +314,25 @@ var convo = {
     
     
                                         ConvT231111 : {
-        says: ["نأمل التواصل مع مدير المركز الفرعي للتدريب الالكتروني بالوحدة التدريبية" , "يمكنك الحصول على بيانات التواصل من خلال الرابط التالي:" , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/Support</a>" , "هل استطيع خدمتك خدمة أخرى؟"],
- reply: [
-      {
-        question: "لا ، شكرا لك",
-        answer: "BYE"
-      },
+        says: ["يمكنك تغيير كلمة المرور الافتراضية من خلال الضغط على" , "نسيت كلمة المرور الخاصة بك؟" , "من صفحة الدخول على نظام البلاك بورد" , "نأمل محاولة تغيير كلمة المرور ثم محاولة تسجيل الدخول" , "هل لازالت المشكلة مستمرة؟"],
+    reply: [
     {
-        question: "نعم لدي مشكلة أخرى",
-        answer: "TrainerC"
+        question: "نعم",
+        answer: "ConvT2311111"
+      },
+            {
+        question: "لا",
+        answer: "NO1"
       },
     ]
   },
     
- 
+                                            ConvT2311111 : {
+        says: ["نأمل التواصل مع مدير المركز الفرعي للتدريب الالكتروني في الوحدة التدريبية" , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>"],
+    reply: [
+    ]
+  },
     
-    
-    
-               ConvT232 : {
-        says: ["التطبيق معطل حاليا، نأمل استخدام المتصفح فقط" , "هل استطيع خدمتك خدمة أخرى؟"],
-
-                       reply: [
-                       {
-                            question: "لا ، شكراً لك",
-                            answer: "BYE"
-                        },
-                        {
-                            question: "نعم لدي مشكلة أخرى",
-                            answer: "TrainerC"
-                        },
-
-                    ]
-                },
     
     
     
@@ -431,203 +350,6 @@ var convo = {
       },
     ]
   },
-    
-
-    
-                ConvT4 : {
-                        says: ["حدد نوع الخدمة التي ترغب بها:"],
-                    reply: [
-                    {
-                        question: "مراكز الاختبارات الدولية",
-                        answer: "ConvT41"
-                      },
-                            {
-                        question: "الاكاديميات العالمية",
-                        answer: "ConvT42"
-                      },
-                              {
-                        question: "الشهادات الاحترافية",
-                        answer: "ConvT43"
-                      },
-                    ]
-                  },
-    
-    
-    
-                    ConvT41 : {
-                        says: ["حدد نوع الخدمة التي ترغب بها:"],
-                    reply: [
-                    {
-                        question: "اجراء اختبار في مركز الاختبارات",
-                        answer: "ConvT411"
-                      },
-                            {
-                        question: "انشاء حساب مستخدم على موقع سيرتي بورت",
-                        answer: "ConvT412"
-                      },
-                    ]
-                  },
-    
-                        ConvT411 : {
-                        says: ["لاجراء اختبار في مركز الاختبارات نأمل التواصل مع مدير المركز الفرعي للتدريب الالكتروني في وحدتك التدريبية" , "يمكنك الحصول على بيانات التواصل من خلال الرابط التالي:" , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/Support</a>" , "هل استطيع خدمتك خدمة أخرى؟"],
-                         reply: [
-                              {
-                                question: "لا ، شكرا لك",
-                                answer: "BYE"
-                              },
-                            {
-                                question: "نعم لدي مشكلة أخرى",
-                                answer: "TrainerC"
-                              },
-                            ]
-                          },
-    
-    
-                            ConvT412 : {
-                        says: [" نأمل الاطلاع على دليل مراكز الاختبارات الدولية عبر الرابط:" , "<a href=' https://ethaqplus.tvtc.gov.sa' target='_blank'>Ethaqplus.tvtc.gov.sa</a>" , "هل استطيع خدمتك خدمة أخرى؟"],
-                         reply: [
-                              {
-                                question: "لا ، شكرا لك",
-                                answer: "BYE"
-                              },
-                            {
-                                question: "نعم لدي مشكلة أخرى",
-                                answer: "TrainerC"
-                              },
-                            ]
-                          },
-   
-    
-    
-                    ConvT42 : {
-                        says: ["حدد نوع الخدمة التي ترغب بها:"],
-                    reply: [
-                    {
-                        question: "الاستفادة من خدمات الاكاديميات العالمية",
-                        answer: "ConvT421"
-                      },
-                            {
-                        question: "التعريف بالاكاديميات العالمية بالمؤسسة",
-                        answer: "ConvT422"
-                      },
-                    ]
-                  },
-    
-    
-                        ConvT421 : {
-                        says: ["نأمل التواصل مع مدير المركز الفرعي للتدريب الالكتروني في الوحدة التدريبية، يمكنك الحصول على بيانات التواصل من خلال الرابط التالي:" , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/Support</a>" , "هل استطيع خدمتك خدمة أخرى؟"],
-                         reply: [
-                              {
-                                question: "لا ، شكرا لك",
-                                answer: "BYE"
-                              },
-                            {
-                                question: "نعم لدي مشكلة أخرى",
-                                answer: "TrainerC"
-                              },
-                            ]
-                          },
-    
-                            ConvT422 : {
-                        says: ["نأمل الاطلاع على الدليل التعريفي بالاكاديميات العالمية عبر الرابط:" , "<a href=' https://ethaqplus.tvtc.gov.sa' target='_blank'>Ethaqplus.tvtc.gov.sa</a>" , "هل استطيع خدمتك خدمة أخرى؟"],
-                         reply: [
-                              {
-                                question: "لا ، شكرا لك",
-                                answer: "BYE"
-                              },
-                            {
-                                question: "نعم لدي مشكلة أخرى",
-                                answer: "TrainerC"
-                              },
-                            ]
-                          },
-    
-    
-    
-    
-    
-    
-                    ConvT43 : {
-                        says: ["حدد نوع الخدمة التي ترغب بها:"],
-                    reply: [
-
-                        
-                    {
-                        question: "قسائم الاختبارات",
-                        answer: "ConvT431"
-                      },
-                            {
-                        question: "كيفية الحصول على شهادة احترافية",
-                        answer: "ConvT432"
-                      },
-
-                    ]
-                  },
-    
-
-    
-                      ConvT431 : {
-                        says: ["للاطلاع على القسائم المتوفرة، نأمل التواصل مع مدير المركز الفرعي للتدريب الالكتروني بالوحدة التدريبية، يمكنك اللحصول على بيانات التواصل من خلال الرابط التالي:" , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/Support</a>" , "هل استطيع خدمتك خدمة أخرى؟"],
- 
-                       reply: [
-                       {
-                            question: "لا ، شكراً لك",
-                            answer: "BYE"
-                        },
-                        {
-                            question: "نعم لدي مشكلة أخرى",
-                            answer: "TrainerC"
-                        },
-
-                    ]
-                },
-    
-    
-                          ConvT432 : {
-                        says: ["الاستعداد للاختبار من خلال دراسة المحتوى الخاص به" , "الحصول على القسيمة الخاصة بالاختبار" , "اجراء الاختبار في مركز اختبار معتمد" , "لمزيد من المعلومات نأمل التواصل مع مدير المركز الفرعي للتدريب الالكتروني في وحدتك التدريبية، ويمكنك الحصول على بيانات التواصل من خلال الرابط التالي:" , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/Support</a>" , "هل استطيع خدمتك خدمة أخرى؟"],
-                         reply: [
-                              {
-                                question: "لا ، شكرا لك",
-                                answer: "BYE"
-                              },
-                            {
-                                question: "نعم لدي مشكلة أخرى",
-                                answer: "TrainerC"
-                              },
-                            ]
-                          },
-
-    
-    
-    
-                          ConvT5 : {
-                        says: ["يمكنك الاطلاع على الحقائب الالكترونية المتوفرة من خلال الرابط التالي: " , "<a href='https://engmohannadb.github.io/etccourses' target='_blank'>engmohannadb.github.io/etccourses</a>" , "هل استطيع خدمتك خدمة أخرى؟"],
-                         reply: [
-                              {
-                                question: "لا ، شكرا لك",
-                                answer: "BYE"
-                              },
-                            {
-                                question: "نعم لدي مشكلة أخرى",
-                                answer: "TrainerC"
-                              },
-                            ]
-                          },
-    
-    
-                              ConvT6 : {
-                        says: ["نأمل التواصل مع حساب خدمة المستفيد على البيانات التالية:" , "تويتر @ask_tvtcweb" , "الرقم الموحد: 0112896664" , "الموقع" , "<a href='https://nartqi.tvtc.gov.sa/ar/ticket' target='_blank'>nartqi.tvtc.gov.sa/ar/ticket</a>" , "هل أستطيع خدمتك خدمة أخرى؟"],
-                         reply: [
-                              {
-                                question: "لا ، شكرا لك",
-                                answer: "BYE"
-                              },
-                            {
-                                question: "نعم لدي مشكلة أخرى",
-                                answer: "TrainerC"
-                              },
-                            ]
-                          },
     
  // above is the trainer part
  // Below youll find the student part
@@ -650,14 +372,16 @@ var convo = {
     reply: [
              {
         question: "مشكلة أخرى", // label for the reply option
-        answer: "answer10" // key for the next conversation object
+        answer: "answer5" // key for the next conversation object
       },
-                        {
-        question: "البرامج المساندة", // label for the reply option
-        answer: "answer12" // key for the next conversation object
+	{
+        question: "البريد الالكتروني ومنصة Teams", // label for the reply option
+        answer: "answer4" // key for the next conversation object
       },
-        
-        
+      {
+        question: "المكافأة", // label for the reply option
+        answer: "answer2" // key for the next conversation object
+      },
 	  {
         question: "البلاك بورد", // label for the reply option
         answer: "answer3" // key for the next conversation object
@@ -667,37 +391,11 @@ var convo = {
         answer: "answer1" // key for the next conversation object
       },
         
-                {
-        question: "الاكاديميات والشهادات الاحترافية", // label for the reply option
-        answer: "answer111" // key for the next conversation object
-      },
-
-        
     ]
   }, 
     
-    
-          answer10 : {
-    says: ["للاستفسار حول خدمات المؤسسة العامة نأمل التواصل مع حساب خدمة المستفيد على البيانات التالية:" 
-           
-           , "تويتر: @ask_tvtcweb" , 
-           
-           "الرقم الموحد: 0112896664", "أو على الموقع التالي:" , " <a href='https://nartqi.tvtc.gov.sa/ar/ticket' target='_blank'>nartqi.tvtc.gov.sa/ar/ticket</a>", "شكرا لتواصلكم معنا" , "مع السلامة"],
-    reply: [
-      
-    ]
-  },
-        
-    
-              answer12 : {
-    says: ["نأمل التواصل حول جميع ما يخص البرامج المساندة مع الادارة المختصة" , "الادارة العامة لشؤون المتدربين" , "عبر البريد الالكتروني" , "gdfa@tvtc.gov.sa"],
-    reply: [
-      
-    ]
-  },
-    
-      answer111 : {
-    says: ["حدد نوع الخدمة التي ترغب بها:"],
+      answer5 : {
+    says: ["هل مشكلتك تتعلق بأي من"],
     reply: [
       {
         question: "الشهادات الاحترافية",
@@ -715,7 +413,7 @@ var convo = {
   },
     
           answer6 : {
-    says: ["حدد نوع الخدمة التي ترغب بها:"],
+    says: ["حدد نوع المشكلة"],
     reply: [
       {
         question: "قسائم الاختبارات",
@@ -733,7 +431,7 @@ var convo = {
   },
 
         ConvD1 : {
-    says: ["للإطلاع على القسائم المتوفرة" , "نأمل التواصل مع مدير المركز الفرعي للتدرب الالكتروني بالوحدة التدريبية في وحدتك التدريبية" , "يمكنك الحصول على بيانات التواصل من خلال الرابط التالي:" , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>" , "هل استطيع خدمتك خدمة أخرى؟"],
+    says: ["نأمل التواصل مع مدير مركز التدريب الالكتروني بالوحدة التدريبية للإطلاع على القسائم المتوفرة " , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>" , "هل أستطيع خدمتك خدمة أخرى؟"],
     reply: [
       {
         question: "نعم",
@@ -763,7 +461,7 @@ var convo = {
     
                ConvD3 :
     {
-    says: ["نأمل الاطلاع على ضوابط واجراءات وألية الرفع بطلب المعادلات عبر الرابط:" , "<a href='http://cdd.tvtc.gov.sa/category/603' target='_blank'>cdd.tvtc.gov.sa</a>" , "هل استطيع خدمتك خدمة أخرى؟"],
+    says: ["نأمل الاطلاع على ضوابط وإجراءات وألية الرفع بطلب المعادلات عبر الرابط <a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>" , "هل أستطيع خدمتك خدمة أخرى؟"],
     reply: [
       {
         question: "نعم",
@@ -805,10 +503,10 @@ var convo = {
                 },
     
                      ConvD5 : {
-                    says: ["نأمل الاطلاع على الدليل التعريفي بالاكاديميات العالمية عبر الرابط:" , "<a href=' https://ethaqplus.tvtc.gov.sa' target='_blank'>Ethaqplus.tvtc.gov.sa</a>" , "هل أستطيع خدمتك خدمة أخرى؟"],
+                    says: ["نأمل الاطلاع على الدليل التعريفي الخاص بالاكاديميات العالمية على الرابط التالي:" ,".............", "هل أستطيع خدمتك خدمة أخرى؟"],
                     reply: [
                         {
-                            question: "نعم",
+                            question: "نعم لدي مشكلة أخرى",
                             answer: "mainConv"
                         },
                         {
@@ -819,26 +517,7 @@ var convo = {
                 },   
     
                              answer8 : {
-                    says: ["لإجراء اختبار في مركز الاختبارات نأمل التواصل مع مدير المركز الفرعي للتدريب الالكتروني بوحدتك التدريبية" , "يمكنك الحصول على بيانات التواصل من خلال الرابط التالي:" , "<a href='http://elearning.edu.sa/support' target='_blank'>elearning.edu.sa/support</a>" , "هل استطيع خدمتك خدمة أخرى؟"],
-
-                       reply: [
-                       {
-                            question: "لا ، شكراً لك",
-                            answer: "BYE"
-                        },
-                        {
-                            question: "نعم لدي مشكلة أخرى",
-                            answer: "mainConv"
-                        },
-
-                    ]
-                }, 
-
-    
-    
-    
-  answer1 : {
-    says: ["يمكنك استعراض الخدمات وأدلة الاستخدام لنظام رايات عبر الرابط التالي:" , "<a href='https://www.tvtc.gov.sa/rayat.html' target='_blank'>www.tvtc.gov.sa/rayat.html</a>" , "وفي حال واجهتك مشكلة نأمل التواصل مع مسؤول نظام رايات في وحدتك التدريبية" , "هل استطيع خدمتك خدمة أخرى؟"],
+                    says: ["نأمل التواصل مع مدير مركز التدريب الالكتروني بالوحدة التدريبية" , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>" , "هل أستطيع خدمتك خدمة أخرى؟"],
                     reply: [
                         {
                             question: "نعم لدي مشكلة أخرى",
@@ -849,9 +528,40 @@ var convo = {
                             answer: "BYE"
                         },
                     ]
-                },
+                },  
+
     
-      
+    
+    
+  answer1 : {
+    says: ["نأمل التواصل مع مسؤول القبول والتسجيل (مسؤول نظام رايات) في الوحدة التدريبية." , "كما يمكنكم التواصل معهم عن طريق الرابط التالي: <a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>" , "هل أستطيع تقديم أي خدمة أخرى؟"],
+    reply: [
+      {
+        question: "نعم لدي مشكلة أخرى",
+        answer: "mainConv"
+      },
+    {
+        question: "لا ، شكراً لك",
+        answer: "BYE"
+      },
+    ]
+  }, // end conversation object
+  
+    
+      answer2 : {
+    says: ["نأمل التواصل مع وحدة التوجية والارشاد في الوحدة التدريبية." , "هل أستطيع تقديم أي خدمة أخرى؟"],
+    reply: [
+      {
+        question: "نعم لدي مشكلة أخرى",
+        answer: "mainConv"
+      },
+    {
+        question: "لا ، شكراً لك",
+        answer: "BYE"
+      },
+    ]
+  }, // end conversation object
+    
     
     
           answer3 : {
@@ -882,7 +592,7 @@ var convo = {
         answer: "Conv1"
       },     
         {
-        question: "لا يمكنني تسجيل الدخول باستخدام المتصفح",
+        question: "عدم إمكانية تسجيل الدخول على المتصفح",
         answer: "Conv2"
       },     
     ]
@@ -944,22 +654,16 @@ var convo = {
                             },
     
                                                             Conv5 : {
-                                                                says: ["هل رقمك التدريبي يبدأ بـ ؟" ],
+                                                                says: ["هل رقمك التدريبي يبدأ بـ 4 ؟" ],
                                                                 reply: [
-      
                                                                     {
-                                                                        question: "غير ذلك",
-                                                                        answer: "ConvNew3"
-                                                                    }, 
+                                                                        question: "نعم",
+                                                                        answer: "Conv7"
+                                                                    },       
                                                                     {
-                                                                        question: "رقمك التدريبي يبدأ بـ 4",
-                                                                        answer: "ConvNew1"
+                                                                        question: "لا",
+                                                                        answer: "Conv8"
                                                                     }, 
-                                                                    {
-                                                                        question: "رقمك التدريبي يبدأ بـ 3",
-                                                                        answer: "ConvNew2"
-                                                                    }, 
-
                                                                     ]
                                                                     },
     
@@ -979,51 +683,8 @@ var convo = {
                                                                     },
     
     
-                                                           ConvNew2 : {
-                                                                says: ["هل فصل التحاقك بالكلية التقنية قبل 1440؟"],
-                                                                reply: [
-                                                                    {
-                                                                        question: "نعم",
-                                                                        answer: "ConvNew21"
-                                                                    },       
-                                                                    {
-                                                                        question: "لا",
-                                                                        answer: "ConvNew22"
-                                                                    }, 
-                                                                    ]
-                                                                    },
     
-                                                               ConvNew21 : {
-                                                                says: ["اسم المستخدم هو الرقم التدريبي مقترناً مع رمز الكلية مثل؟" , "rdct34346" , "والمكون من 10 خانات" , "وكلمة المرور هو رقم الهوية باللغة الانجليزية" , "نأمل محاولة تسجيل الدخول، هل لا زالت المشكلة مستمرة؟"],
-                                                                reply: [
-                                                                    {
-                                                                        question: "نعم",
-                                                                        answer: "Conv9"
-                                                                    },       
-                                                                    {
-                                                                        question: "لا",
-                                                                        answer: "BYE"
-                                                                    }, 
-                                                                    ]
-                                                                    },
-    
-    
-                                                                   ConvNew22 : {
-                                                                says: ["اسم المستخدم وكلمة المرور هو الرقم التدريبي المكون من 9 خانات باللغة الانجليزية" , "نأمل محاولة تسجيل الدخول، هل لا زالت المشكلة مستمرة؟"],
-                                                                reply: [
-                                                                    {
-                                                                        question: "نعم",
-                                                                        answer: "Conv9"
-                                                                    },       
-                                                                    {
-                                                                        question: "لا",
-                                                                        answer: "BYE"
-                                                                    }, 
-                                                                    ]
-                                                                    },
-    
-    
-                                                                            ConvNew1 : {
+                                                                            Conv7 : {
                                                                                     says: ["أسم المستخدم هو الرقم التدريبي المكون من 9 خانات وكلمة المرور هي رقم الهوية باللغة الانجليزية" , "نأمل محاولة تسجيل الدخول، هل لا زالت المشكلة مستمرة؟"],
                                                                                     reply: [
                                                                                         {
@@ -1069,7 +730,7 @@ var convo = {
     
     
                                                                                         Conv10 : {
-                                                                                    says: ["نأمل التواصل مع مدير المركز الفرعي للتدريب الالكتروني بوحدتك التدريبية" , "يمكنك الحصول على بيانات التواصل من خلال الرابط التالي:" , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>" , "هل استطيع خدمتك خدمة أخرى؟"],
+                                                                                    says: ["نأمل التواصل مع مدير المركز الفرعي بالوحدة التدريبية" , "أهل استطيع خدمتك خدمة أخرى؟"],
                                                                                     reply: [
                                                                                         {
                                                                                             question: "نعم لدي إستفسار اخر.",
@@ -1098,7 +759,7 @@ var convo = {
                         }, 
     
                             ConvB1 : {
-                                says: ["نأمل التواصل مع مسؤول نظام رايات في وحدتك التدريبية لمعالجة أي حالة مسجلة في نظام رايات ثم الانتظار 24 ساعة ليظهر لك المقرر في البلاك بورد" , "هل استطيع خدمتك خدمة أخرى؟"],
+                                says: ["نأمل معالجة أي حالة مسجلة في نظام رايات ثم الانتظار 24 ساعة ليظهر لك المقرر في البلاك بورد" , "هل أستطيع تقديم أي خدمات أخرى؟"],
                                 reply: [
                                     {
                                         question: "نعم",
@@ -1127,7 +788,7 @@ var convo = {
     
     
                                     ConvB3 : {
-                                says: ["نأمل التواصل مع مدير المركز الفرعي للتدريب الالكتروني بالوحدة التدريبية" , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>" , "هل أستطيع خدمتك خدمة أخرى؟"],
+                                says: ["نأمل إرسال طلب دعم فني (تحديث بيانات البلاك بورد) عبر بوابة الدعم الفني للمؤسسة.", "<a href='https://tvtc.gov.sa/tech-support-page.html' target='_blank'>itsmsso.tvtc.gov.sa/</a>" , "هل أستطيع خدمتك خدمة أخرى؟"],
                                 reply: [
                                     {
                                         question: "نعم",
@@ -1145,10 +806,6 @@ var convo = {
                             answer33 : {
                        says: ["حدد نوع المشكلة؟"],
                         reply: [
-                            {
-                            question: "أخرى",
-                            answer: "ConvC3"
-                          }, 
                           {
                             question: "الاختبارات والدرجات",
                             answer: "ConvC1"
@@ -1157,7 +814,10 @@ var convo = {
                             question: "جلسات بث المحاضرات",
                             answer: "ConvC2"
                           },
-
+                          {
+                            question: "أخرى",
+                            answer: "ConvC3"
+                          }, 
                          ]
                         }, 
     
@@ -1176,9 +836,8 @@ var convo = {
                                             ]
                                             }, 
     
-    
                                             ConvC3 : {
-                                            says: ["يمكنك الاطلاع على صفحة الاسئلة المتكررة حول استخدام ادوات النظام عبر الرابط التالي:" , "<a href='http://elearning.edu.sa/lms_faq' target='_blank'>Elearning.edu.sa/lms_faq</a>" , "كما يمكنك التواصل مع مدير المركز الفرعي للتدريب الالكتروني في وحدتك التدريبية، ويمكنك الحصول على بيانات التواصل من خلال الرابط التالي:" , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>" , "هل استطيع خدمتك خدمة أخرى؟"],
+                                            says: ["نأمل التواصل مع مدير المركز الفرعي للتدريب الالكتروني بالوحدة التدريبية" , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>" , "هل أستطيع خدمتك خدمة أخرى؟"],
                                             reply: [
                                                 {
                                                     question: "نعم",
@@ -1254,20 +913,22 @@ var convo = {
     
     
                                     ConvC8: {
-                                        says: ["نأمل التواصل مع مدير المركز الفرعي للتدريب الالكتروني في الوحدة التدريبية" ,"<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>" , "هل استطيع خدمتك خدمة أخرى؟"],
-                                           reply: [
-                                           {
-                                                question: "لا ، شكراً لك",
-                                                answer: "BYE"
-                                            },
-                                            {
-                                                question: "نعم لدي مشكلة أخرى",
-                                                answer: "mainConv"
-                                            },
-
-                                        ]
-                                    },
-
+                                        says: ["نأمل التواصل مع مدير المركز الفرعي للتدريب الالكتروني في الوحدة التدريبية" ,"<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>"],
+                                         reply: [ ]
+                                            }, 
+          answer4 : {
+    says: ["نأمل التواصل مع مشرف تقنية المعلومات والدعم الفني في الوحدة التدريبية." , "<a href='http://elearning.edu.sa/support/' target='_blank'>Elearning.edu.sa/support</a>" , "هل أستطيع تقديم أي خدمة أخرى؟"],
+    reply: [
+      {
+        question: "نعم لدي مشكلة أخرى",
+        answer: "mainConv"
+      },
+    {
+        question: "لا ، شكراً لك",
+        answer: "BYE"
+      },
+    ]
+  }, // end conversation object
     
     
     
@@ -1283,7 +944,7 @@ var convo = {
 
 // CUSTOM STARTPOINT for conversation block defined as a
 // second parameter in .talk() function:
-chatWindow.talk(convo, "ConvTstart")
+chatWindow.talk(convo, "ConvT")
 
 // that's it!
   
