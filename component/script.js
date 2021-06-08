@@ -682,17 +682,31 @@ var convo = {
            
            , "تويتر: @ask_tvtcweb" , 
            
-           "الرقم الموحد: 0112896664", "أو على الموقع التالي:" , " <a href='https://nartqi.tvtc.gov.sa/ar/ticket' target='_blank'>nartqi.tvtc.gov.sa/ar/ticket</a>", "شكرا لتواصلكم معنا" , "مع السلامة"],
+           "الرقم الموحد: 0112896664", "أو على الموقع التالي:" , " <a href='https://nartqi.tvtc.gov.sa/ar/ticket' target='_blank'>nartqi.tvtc.gov.sa/ar/ticket</a>", "هل استطيع خدمتك خدمة أخرى؟"],
     reply: [
-      
+      {
+        question: "نعم",
+        answer: "mainConv"
+      },
+    {
+        question: "لا",
+        answer: "BYE"
+      },
     ]
   },
         
     
               answer12 : {
-    says: ["نأمل التواصل حول جميع ما يخص البرامج المساندة مع الادارة المختصة" , "الادارة العامة لشؤون المتدربين" , "عبر البريد الالكتروني" , "gdfa@tvtc.gov.sa"],
+    says: ["نأمل التواصل حول جميع ما يخص البرامج المساندة مع الادارة المختصة" , "الادارة العامة لشؤون المتدربين" , "عبر البريد الالكتروني" , "gdfa@tvtc.gov.sa" , "هل استطيع خدمتك خدمة أخرى؟"],
     reply: [
-      
+      {
+        question: "نعم",
+        answer: "mainConv"
+      },
+    {
+        question: "لا",
+        answer: "BYE"
+      },
     ]
   },
     
